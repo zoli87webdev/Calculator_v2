@@ -10,6 +10,6 @@ class ProcessLitigationFeeController extends Controller
     {
         $validated =$request->validated();
 
-        dd('ok');
+        
     }
 }

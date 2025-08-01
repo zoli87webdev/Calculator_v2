@@ -150,10 +150,6 @@
             const procedureType = procedureTypeSelect.value;
             const courtLevel = getSelectedCourtLevel();
 
-
-            console.log('procedureType', procedureType);
-            console.log('courtLevel', courtLevel);
-
             if (!procedureType || !courtLevel) {
                 feeBase.textContent = '0 Ft';
                 feeTotal.textContent = '';
@@ -192,7 +188,7 @@
                     console.error(error);
                 });
         }
-
+// TODO: CHECKOLNI!!! HIBÁS!!!
         function setHelpBaseFeeIfNeeded() {
             const procedureType = procedureTypeSelect.value;
             const courtLevel = getSelectedCourtLevel();

@@ -26,6 +26,10 @@ class LitigationFeeService
             'additional_options' => $this->repository->getByKey('litigation_fee_additional_options'),
             'special_case_types' => $this->repository->getByKey('litigation_fee_special_case_types'),
             'fallback_base' => $this->repository->getByKey('litigation_fee_fallback_base'),
+            //kiegészitve, ellenőrizni kell
+            'tiered' => $this->repository->getByKey('litigation_fee_tiered'),
+            'fixed_specials' => $this->repository->getByKey('litigation_fee_fixed_specials'),
+            'discount_rules' => $this->repository->getByKey('litigation_fee_discount_rules'),
         ];
     }
 }
