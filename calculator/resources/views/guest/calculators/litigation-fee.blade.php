@@ -54,28 +54,41 @@
                         <label class="form-label d-block">További opciók</label>
                         @foreach ($settings['additional_options']->setting_value as $additional_option)
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="additional-option-{{ $additional_option["key"] }}" name="{{ $additional_option["key"] }}"
-                                    value="1">
-                                <label class="form-check-label" for="additional-option-{{ $additional_option["key"] }}">{{ $additional_option['label'] }}</label>
+                                <input class="form-check-input" type="checkbox"
+                                    id="additional-option-{{ $additional_option['key'] }}"
+                                    name="{{ $additional_option['key'] }}" value="1">
+                                <label class="form-check-label"
+                                    for="additional-option-{{ $additional_option['key'] }}">{{ $additional_option['label'] }}</label>
                             </div>
                         @endforeach
                     </div>
 
                     <div class="mb-3">
                         <label for="special-type" class="form-label">Különleges illeték típus</label>
-                        @foreach ($settings['special_case_types']->setting_value as $special_case_type)
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="special_type" id="special-type-{{ $special_case_type['key'] }}" value="{{ $special_case_type['key'] }}">
-                                <label class="form-check-label" for="special-type-{{ $special_case_type['key'] }}">{{ $special_case_type['label'] }}</label>
-                            </div>
+                        <select name="special_type" id="special-type" class="form-select">
+                            <option value="" selected disabled>Válasz a listából</option>
+                            @foreach ($settings['special_case_types']->setting_value as $special_case_type)
+                                <option value="{{ $special_case_type['key'] }}">{{ $special_case_type['label'] }}</option>
                             @endforeach
-
-
+                        </select>
                     </div>
                 </form>
+                <!-- TÖRVÉNYI HIVATKOZÁSOK KIEGÉSZITÉS-->
+                <div class="mt-auto pt-3 border-top">
+                    <div class="mt-2">
+                        <span class="text-muted small">
+                            * Illetéktörvény: 1990. évi XCIII. törvény (különösen 39–42. §)
+                        </span>
+                    </div>
+                    <div class="mt-2">
+                        <span class="text-muted small">
+                            * Polgári perrendtartás: 2016. évi CXXX. törvény (Pp.)
+                        </span>
+                    </div>
+                </div>
             </div>
             <!-- Jobb oldal: Illetékszámítás -->
-            <div class="col-12 col-md-4 d-flex justify-content-center">
+            <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
                 <div class="border rounded p-2 w-100 d-grid" style="grid-template-rows: auto 1fr auto; min-height: 350px;">
                     <h5 class="mt-4">Illetékszámítás</h5>
 
@@ -100,20 +113,6 @@
                         <div class="d-flex justify-content-between fw-bold">
                             <span>Összesen</span>
                             <span id="fee-total">0 Ft</span>
-                        </div>
-                    </div>
-
-                    <!-- TÖRVÉNYI HIVATKOZÁSOK KIEGÉSZITÉS-->
-                    <div class="mt-auto pt-3 border-top">
-                        <div class="mt-2">
-                            <span class="text-muted small">
-                                * Illetéktörvény: 1990. évi XCIII. törvény (különösen 39–42. §)
-                            </span>
-                        </div>
-                        <div class="mt-2">
-                            <span class="text-muted small">
-                                * Polgári perrendtartás: 2016. évi CXXX. törvény (Pp.)
-                            </span>
                         </div>
                     </div>
                 </div>
