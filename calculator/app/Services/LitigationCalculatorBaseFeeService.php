@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Services\LitigationFeeService;
 
-class LitigationCalculatorBaseFee
+class LitigationCalculatorBaseFeeService
 {
     public function __construct(private LitigationFeeService $litigationFeeService) {}
 
